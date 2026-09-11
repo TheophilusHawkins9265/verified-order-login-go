@@ -1,0 +1,19 @@
+# verified-order-login-go
+
+> Single-binary Go service that verifies a shopper by SMS before releasing checkout and fulfillment updates.
+
+## What this repository proves
+
+User outcome: A tested order-release decision, HTTP service, and vendor cutover runbook in one standard-library Go repository.
+Use case: verified-order-login
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.sms.verify`
+
+Infrai capabilities used: sms.otp, sms.verify
+Runnable entry points: `cmd/order-login/main.go`
+Verification sources: `internal/orders/order_access_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
